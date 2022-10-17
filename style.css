@@ -1,0 +1,72 @@
+body {
+    padding-top: 30px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background: linear-gradient(#ffffff, #9198e5);
+}
+
+section {
+    display: grid;
+    grid-template-columns: repeat(4, 8rem);
+    grid-template-rows: repeat(4, 8rem);
+    gap: 2rem;
+    perspective: 800px;
+    margin-bottom: 40px;
+}
+
+.card {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
+}
+
+.face,
+.back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    pointer-events: none;
+}
+
+.back {
+    background: #9966cc;
+    backface-visibility: hidden;
+}
+
+.face {
+    display: flex;
+    background-color: white;
+    font-size: 6em;
+    transform: rotatey(180deg);
+    align-items: center;
+    justify-content: center;
+}
+
+.toggleCard {
+    transform: rotateY(180deg);
+}
+
+.btn {
+    background-color: #ffffff;
+    border: none;
+    padding: 20px 25px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition-property: color, background-color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+}
+
+.btn:hover {
+    background-color: #6f00cc;
+    color: white;
+}
+
+.btn:active {
+    background-color: #3a006b;
+    color: white;
+}
